@@ -7,6 +7,7 @@ public class ArgumentParser
         Arguments = arguments;
     }
 
+    // Parses command-line arguments into a dictionary for easy access
     public static ArgumentParser Parse(string[] args)
     {
         var arguments = new Dictionary<string, string?>(StringComparer.OrdinalIgnoreCase);
@@ -27,6 +28,7 @@ public class ArgumentParser
         return new ArgumentParser(arguments);
     }
 
+    // Validates the presence of required arguments and their formats
     public bool IsValid(out string validationMessage)
     {
         if (!Arguments.ContainsKey("scanDir") || string.IsNullOrWhiteSpace(Arguments["scanDir"]))

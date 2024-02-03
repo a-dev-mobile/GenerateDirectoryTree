@@ -9,6 +9,7 @@ public class FileContentPrinter
         _scanDir = scanDir;
     }
 
+    // Prints the contents of each file, preceded by a header with the relative file path
     public void PrintFilesContent()
     {
         Console.WriteLine("\n--- File Contents ---");
@@ -18,6 +19,7 @@ public class FileContentPrinter
         }
     }
 
+    // Prints a header with the file's relative path before printing its contents
     private void PrintFileContentsWithHeader(string filePath)
     {
         var relativePath = Path.GetRelativePath(_scanDir, filePath);
@@ -25,6 +27,7 @@ public class FileContentPrinter
         PrintFileContents(filePath);
     }
 
+    // Reads and prints the contents of a file, handling potential errors gracefully
     private void PrintFileContents(string filePath)
     {
         try
@@ -38,6 +41,6 @@ public class FileContentPrinter
         {
             Console.WriteLine($"    Failed to read file: {ex.Message}");
         }
-        Console.WriteLine(); // Improve readability with a blank line after file content.
+        Console.WriteLine(); // Adds a blank line for better readability after printing a file's content
     }
 }
