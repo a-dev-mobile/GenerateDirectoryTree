@@ -39,12 +39,12 @@ dotnet run --project /path/to/YourProject.csproj [options]
 ### Command-Line Arguments
 
 - `--scanDir "path"`: Specify the root directory for generating the tree. If not provided, the current directory is used.
-- `--exclude "dir1,dir2"`: A comma-separated list of directories to exclude from the scan. For example, `--exclude "bin,obj"`.
+- `--exclude "dir1 | dir2"`: A comma-separated list of directories to exclude from the scan. For example, `--exclude "bin | obj"`.
 
 ### Example
 
 ```
-dotnet run --project /path/to/YourProject.csproj --scanDir "C:\Projects\MyProject" --exclude "bin,obj,node_modules"
+dotnet run --project /path/to/YourProject.csproj --scanDir "C:\Projects\MyProject" --exclude "bin | obj | node_modules"
 ```
 
 This command will generate a tree for "C:\Projects\MyProject", excluding the "bin", "obj", and "node_modules" directories.

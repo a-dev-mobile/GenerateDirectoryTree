@@ -23,8 +23,13 @@ class Program
             return;  // Exit if the specified directory does not exist
         }
 
+        // Separator variables
+        var originalSeparator = " | "; // Original string to be replaced
+        var preferredSeparator = "|";    // Preferred separator
+
         // Process and split the 'exclude' argument into a set of directory names to ignore
-        var excludeDirs = new HashSet<string>((arguments.GetValueOrDefault("exclude", "") ?? "").Split(',', StringSplitOptions.RemoveEmptyEntries), StringComparer.OrdinalIgnoreCase);
+        string excludeValue = (arguments.GetValueOrDefault("exclude", "") ?? "").Replace(originalSeparator, preferredSeparator);
+        var excludeDirs = new HashSet<string>(excludeValue.Split(preferredSeparator, StringSplitOptions.RemoveEmptyEntries), StringComparer.OrdinalIgnoreCase);
 
         // Output the name of the root directory being scanned
         Console.WriteLine($"{new DirectoryInfo(scanDir).Name}/");
