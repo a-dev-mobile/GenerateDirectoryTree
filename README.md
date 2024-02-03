@@ -31,6 +31,7 @@ This console application, written in C#, generates a tree-like structure of dire
 ## Usage
 
 To run the application, use the following command in the terminal, replacing `[options]` with your desired command-line arguments:
+
 ```
 dotnet run --project /path/to/YourProject.csproj [options]
 ```
@@ -46,20 +47,20 @@ dotnet run --project /path/to/YourProject.csproj [options]
 dotnet run --project /path/to/YourProject.csproj --scanDir "C:\Projects\MyProject" --exclude "bin,obj,node_modules"
 ```
 
-
 This command will generate a tree for "C:\Projects\MyProject", excluding the "bin", "obj", and "node_modules" directories.
 
 ## Output Format
 
 The application outputs the directory structure in a tree format, with branches representing directories and leaves representing files. Empty directories are shown as branches without leaves.
 
+```
 MyProject/
 ├── src/
 │ ├── file1.cs
 │ └── file2.cs
 └── test/
 └── testfile1.cs
-
+```
 
 ## Contributing
 
