@@ -17,7 +17,7 @@ This console application, written in C#, generates a tree-like structure of dire
 1. Clone the repository to your local machine:
 
     ```
-    git clone https://github.com/yourusername/your-repo-name.git
+    git clone https://github.com/a-dev-mobile/GenerateDirectoryTree.git
     ```
 
 2. Navigate to the cloned repository.
